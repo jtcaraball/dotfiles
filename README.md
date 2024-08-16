@@ -1,6 +1,6 @@
 # dotfiles
 
-Personal configurations files.
+My personal configuration files.
 
 ![sample screenshot](screenshot.png)
 
