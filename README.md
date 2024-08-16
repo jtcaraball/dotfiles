@@ -2,6 +2,8 @@
 
 Personal configurations files.
 
+![sample screenshot](screenshot.png)
+
 ## Neovim
 
 ### Important features
