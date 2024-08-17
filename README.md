@@ -58,6 +58,7 @@ Ensure that:
 
 1. [kitty](https://sw.kovidgoyal.net/kitty/),
    [oh_my_zsh](https://github.com/ohmyzsh/ohmyzsh),
+   [powerlevel10k](https://github.com/romkatv/powerlevel10k),
    [neovim](https://github.com/neovim/neovim) and
    [stow](https://www.gnu.org/software/stow/manual/stow.html) are installed in
    your system.
