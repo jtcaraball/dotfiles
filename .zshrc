@@ -120,4 +120,4 @@ PATH+=":$HOME/.local/bin"
 # go installation: https://go.dev/doc/install
 export PATH=$PATH:/usr/local/go/bin
 # go user binaries
-export PATH=$PATH:/home/jo/go/bin
+export PATH=$PATH:/home/$HOME/go/bin
