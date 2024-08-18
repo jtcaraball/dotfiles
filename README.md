@@ -57,7 +57,7 @@ My personal configuration files.
 Ensure that:
 
 1. [kitty](https://sw.kovidgoyal.net/kitty/),
-   [oh_my_zsh](https://github.com/ohmyzsh/ohmyzsh),
+   [oh_my_zsh](https://github.com/ohmyzsh/ohmyzsh) (and zsh),
    [powerlevel10k](https://github.com/romkatv/powerlevel10k),
    [neovim](https://github.com/neovim/neovim) and
    [stow](https://www.gnu.org/software/stow/manual/stow.html) are installed in
@@ -68,8 +68,12 @@ Ensure that:
 Then run the following commands
 
 ```bash
+# Get config files
 cd $HOME
 git clone https://github.com/jtcaraball/dotfiles
+# Create symlinks,  source changes and download zsh plugins
 cd dotfiles
 stow .
+source $HOME/.zshrc
+zsh zshplugins.sh
 ```
