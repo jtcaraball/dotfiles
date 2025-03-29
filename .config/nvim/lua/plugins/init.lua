@@ -120,6 +120,19 @@ return {
 		end,
 	},
 
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+		config = function()
+			require("configs.harpoon")
+		end,
+
+	},
+
 	-- qol
 	"unblevable/quick-scope",
 
@@ -127,7 +140,9 @@ return {
 		'Wansmer/treesj',
 		dependencies = { 'nvim-treesitter/nvim-treesitter' },
 		config = function()
-			require('treesj').setup({})
+			require('treesj').setup({
+				use_default_keymaps = false,
+			})
 		end,
 	},
 
