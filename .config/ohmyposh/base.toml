@@ -1,0 +1,84 @@
+version = 3
+final_space = true
+
+[palette]
+  blue = '#89B4FA'
+  closer = 'p:os'
+  lavender = '#B4BEFE'
+  os = '#ACB0BE'
+  pink = '#F5C2E7'
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+
+  [[blocks.segments]]
+    template = '{{ .Icon }} '
+    foreground = 'p:os'
+    type = 'os'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '{{ .UserName }}@{{ .HostName }} '
+    foreground = 'p:blue'
+    type = 'session'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+
+  [[blocks.segments]]
+    template = '{{ .Path }} '
+    foreground = 'p:pink'
+    type = 'path'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      cache_duration = 'none'
+      style = 'agnoster'
+
+  [[blocks.segments]]
+    template = '{{ .HEAD }} {{if and (.BranchStatus) (ne .BranchStatus "≡") }}{{ .BranchStatus }} {{ end }}{{if gt .Staging.Modified 0}}+{{ .Staging.Modified}}{{end}}{{.Working.String}}'
+    foreground = 'p:lavender'
+    type = 'git'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      branch_icon = ' '
+      cache_duration = 'none'
+      commit_icon = '@ '
+      fetch_status = true
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'right'
+
+  [[blocks.segments]]
+    template = '󱦟 {{ .FormattedMs }} '
+    foreground = 'p:lavender'
+    type = 'executiontime'
+    style = 'plain'
+
+    [blocks.segments.properties]
+      always_enabled = true
+      cache_duration = 'none'
+      style = 'austin'
+      threshold = 5000
+
+[[blocks]]
+  type = 'prompt'
+  alignment = 'left'
+  newline = true
+
+  [[blocks.segments]]
+    template = '❯'
+    background = 'transparent'
+    type = 'text'
+    style = 'plain'
+    foreground_templates = ['{{if gt .Code 0}}red{{end}}', '{{if eq .Code 0}}p:closer{{end}}']
+
+    [blocks.segments.properties]
+      cache_duration = 'none'

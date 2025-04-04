@@ -1,0 +1,20 @@
+configuration{
+    modes: ["drun", "window", "run", "combi"];
+	combi-modes: ["window", "drun", "power-menu:~/.config/rofi/scripts/rofi-power-menu.sh"];
+    icon-theme: "Papirus-Dark";
+    show-icons: true;
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    sidebar-mode: false;
+    display-drun: " ";
+    display-run: " ";
+    display-window: " ";
+
+	power-menu {
+		display-name: " ";
+	}
+}
+
+@theme "~/.config/rofi/jo.rasi"

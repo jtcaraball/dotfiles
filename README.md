@@ -1,6 +1,9 @@
 # dotfiles
 
-My personal configuration files.
+My personal configuration for my arch machine. It includes a setup script
+for installing and setting up all packages.
+
+todo: change description and screenshot.
 
 ![sample screenshot](screenshot.png)
 
@@ -42,38 +45,27 @@ My personal configuration files.
 
 ## Notes
 
-- Neovim's theme is intended to be used together with the
-  [kitty](https://sw.kovidgoyal.net/kitty/) configuration in this repository
-  and the SauceCodePro Nerd Font which can be downloaded
-  [here](https://www.nerdfonts.com/font-downloads).
+- In order for the `poweroff`, `reboot` and `logout` commands in `rofi` to work
+  you must first set up the necessary permissions, for example, with `polkit`.
 
-- The mappings were choosen (or left as is) to suit a
-  [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) using
-  [these](https://github.com/jtcaraball/qmk_firmware/blob/my-branch/keyboards/ferris/sweep/keymaps/mine/keymap.c)
-  mappings but they should work fine on any keyboard.
+- Neovim's theme is intended to be used together with the
+  [kitty](https://sw.kovidgoyal.net/kitty/) configuration in this repository.
+
+- To see a wallpaper store the desired image as a jpeg in
+  `$HOME/pictures/wallpapers/wp.jpeg`. or edit the `feh` command execution in
+  `.config/i3/config`.
+
+- The mappings were chosen (or left as is) to suit a
+  [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) or a [Skeletyl](https://github.com/Bastardkb/Skeletyl) using
+  [these](https://github.com/jtcaraball/qmk_firmware/blob/my-branch/keyboards/ferris/sweep/keymaps/mine/keymap.c) or
+  [these](https://github.com/jtcaraball/qmk_firmware/blob/my-branch/keyboards/bastardkb/skeletyl/keymaps/mine/keymap.c)
+  mappings respectively, but they should work fine on any keyboard.
 
 ## Installation
 
-Ensure that:
-
-1. [kitty](https://sw.kovidgoyal.net/kitty/),
-   [oh_my_zsh](https://github.com/ohmyzsh/ohmyzsh) (and zsh),
-   [powerlevel10k](https://github.com/romkatv/powerlevel10k),
-   [neovim](https://github.com/neovim/neovim) and
-   [stow](https://www.gnu.org/software/stow/manual/stow.html) are installed in
-   your system.
-2. The following dot files or directories are not present in your home
-   directory: `.zshrc`, `.p10k.zsh`, `.config/nvim` or `.config/kitty`.
-
-Then run the following commands
-
+Ensure that `git` is installed and run the following commands.
 ```bash
-# Get config files
 cd $HOME
-git clone https://github.com/jtcaraball/dotfiles
-# Create symlinks,  source changes and download zsh plugins
-cd dotfiles
-stow .
-source $HOME/.zshrc
-zsh zshplugins.sh
+git clone --branch arch https://github.com/jtcaraball/dotfiles .dotfiles
+bash .dotfiles/setup.sh
 ```

@@ -1,0 +1,76 @@
+"$schema" = "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+
+version = 2
+final_space = true
+
+[palette]
+	os = '#ACB0BE'
+	closer = 'p:os'
+	pink = '#F5C2E7'
+	lavender = '#B4BEFE'
+	blue =  '#89B4FA'
+
+[[blocks]]
+	type = 'prompt'
+	alignment = 'left'
+
+	[[blocks.segments]]
+		foreground = 'p:os'
+		type = 'os'
+		style = 'plain'
+		template = '{{ .Icon }} '
+
+	[[blocks.segments]]
+		foreground = 'p:blue'
+		style = 'plain'
+		template = '{{ .UserName }}@{{ .HostName }} '
+		type = 'session'
+
+	[[blocks.segments]]
+		foreground = 'p:pink'
+		style = 'plain'
+		template = '{{ .Path }} '
+		type = 'path'
+		[blocks.segments.properties]
+			style = 'agnoster'
+
+    [[blocks.segments]]
+		foreground = 'p:lavender'
+		template = '{{ .HEAD }} {{if and (.BranchStatus) (ne .BranchStatus "≡") }}{{ .BranchStatus }} {{ end }}{{if gt .Staging.Modified 0}}+{{ .Staging.Modified}}{{end}}{{.Working.String}}'
+		style = 'plain'
+		type = 'git'
+
+		[blocks.segments.properties]
+			commit_icon = '@ '
+			branch_icon = ' '
+			fetch_status = true
+
+[[blocks]]
+	type = 'prompt'
+	alignment = 'right'
+
+	[[blocks.segments]]
+		type = "executiontime"
+		style = "plain"
+		foreground = "p:lavender"
+		template = "󱦟 {{ .FormattedMs }} "
+
+		[blocks.segments.properties]
+			threshold = 5000
+			style = "austin"
+			always_enabled = true
+
+[[blocks]]
+	type = 'prompt'
+	alignment = 'left'
+	newline = true
+
+    [[blocks.segments]]
+	type = 'text'
+	style = 'plain'
+	foreground_templates = [
+		"{{if gt .Code 0}}red{{end}}",
+		"{{if eq .Code 0}}p:closer{{end}}",
+	]
+	background = 'transparent'
+	template = '❯'
