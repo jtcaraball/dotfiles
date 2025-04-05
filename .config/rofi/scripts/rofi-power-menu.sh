@@ -3,11 +3,12 @@
 set -e
 set -u
 
-options=(restart poweroff)
+options=(restart poweroff logout)
 
 declare -A texts
 texts[restart]="restart"
 texts[poweroff]="power off"
+texts[logout]="logout"
 
 showtext=true
 
@@ -58,6 +59,9 @@ else
 		;;
 		"$(print_selection "${messages[restart]}")")
 			confirm "reboot" "Restart"
+		;;
+		"$(print_selection "${messages[logout]}")")
+			confirm "logout" "Logout"
 		;;
 		*)
 			# The selection didn't match anything, so raise an error
