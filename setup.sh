@@ -13,7 +13,7 @@ sudo pacman -S wget stow \
 	xorg i3-wm feh picom polybar rofi dunst libnotify \
 	ttf-ibmplex-mono-nerd epapirus-icon-theme noto-font-emoji \
 	pipewire pipewire-jack pipewire-pulse pipewire-audio \
-	kitty yazi \
+	kitty yazi btop \
 	neovim ripgrep luarocks fd
 
 # Setup Xorg
