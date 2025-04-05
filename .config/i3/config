@@ -191,7 +191,7 @@ bindsym $mod+space exec rofi -show combi
 exec_always --no-startup-id picom
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/wp.jpeg
+exec_always --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/wp1.jpeg
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -208,6 +208,3 @@ gaps inner 7px
 gaps outer 1px
 # No mouse warping
 mouse_warping none
-
-# Open kitty
-exec kitty
