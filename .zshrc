@@ -122,4 +122,8 @@ export PATH=$PATH:/usr/local/go/bin
 # go user binaries
 export PATH=$PATH:$HOME/go/bin
 
+# Enable docker rootless.
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+
+# Start ohmyposh.
 eval "$(oh-my-posh init zsh --config ~/.config/ohmyposh/base.toml)"
