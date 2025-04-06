@@ -9,11 +9,11 @@ sudo pacman -Syu
 # - Audio.
 # - Terminal.
 # - Neovim.
-sudo pacman -S wget stow \
+sudo pacman -S --needed wget stow \
 	xorg i3-wm feh picom polybar rofi dunst libnotify \
 	ttf-ibmplex-mono-nerd epapirus-icon-theme noto-font-emoji \
-	pipewire pipewire-jack pipewire-pulse pipewire-audio \
-	kitty yazi btop \
+	pipewire pipewire-jack pipewire-pulse pipewire-audio pipewire-alsa \
+	kitty yazi btop rustup base-devel \
 	neovim ripgrep luarocks fd
 
 # Setup Xorg
@@ -21,9 +21,7 @@ Xorg :0 -configure > /dev/null 2>&1
 sudo mv $HOME/xorg.conf.new /etc/X11/xorg.conf
 
 # Install paru and polybar
-sudo pacman -S --needed rustup base-devel
 rustup default stable
-
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
@@ -35,6 +33,9 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 chsh -s /usr/bin/zsh
 rm .zshrc
+
+# Set keyboard locale
+sudo localectl --no-convert set-x11-keymap us,us "" ,alt-intl grp:alt_shift_toggle
 
 # Stow away
 cd ~/.dotfiles
