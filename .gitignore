@@ -1,1 +1,6 @@
+# Ignore go configs.
 **/go/*
+# Systemd is our own business.
+.config/systemd
+# Wallpaper symlink.
+.config/i3/wallpaper

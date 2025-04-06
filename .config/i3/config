@@ -191,7 +191,7 @@ bindsym $mod+space exec rofi -show combi
 exec_always --no-startup-id picom
 
 # Wallpaper
-exec_always --no-startup-id feh --bg-fill $HOME/pictures/wallpapers/wp1.jpeg
+exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wallpaper
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

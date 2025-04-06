@@ -51,9 +51,10 @@ todo: change description and screenshot.
 - Neovim's theme is intended to be used together with the
   [kitty](https://sw.kovidgoyal.net/kitty/) configuration in this repository.
 
-- To see a wallpaper store the desired image as a jpeg in
-  `$HOME/pictures/wallpapers/wp.jpeg`. or edit the `feh` command execution in
-  `.config/i3/config`.
+- Wallpaper selection is handled by creating a simlink of the desired image
+  file in the i3 configuration folder using the command `ln -s /path/to/image
+  $HOME/.config/i3/wallpaper`. To see the background change run
+  `i3-msg restart`.
 
 - The mappings were chosen (or left as is) to suit a
   [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) or a [Skeletyl](https://github.com/Bastardkb/Skeletyl) using
