@@ -52,7 +52,7 @@ todo: change description and screenshot.
   [kitty](https://sw.kovidgoyal.net/kitty/) configuration in this repository.
 
 - Wallpaper selection is handled by creating a simlink of the desired image
-  file in the i3 configuration folder using the command `ln -s /path/to/image
+  file in the i3 configuration folder using the command `ln -sf /path/to/image
   $HOME/.config/i3/wallpaper`. To see the background change run
   `i3-msg restart`.
 
