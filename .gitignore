@@ -1,6 +1,9 @@
 # Ignore go configs.
 **/go/*
-# Systemd is our own business.
+# Private/unwanted configs.
 .config/systemd
+.config/dconf
+.config/QtProject.conf
+.config/btop/btop.log
 # Wallpaper symlink.
 .config/i3/wallpaper
