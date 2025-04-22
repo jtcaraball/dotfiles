@@ -10,8 +10,6 @@ texts[restart]="restart"
 texts[poweroff]="power off"
 texts[logout]="logout"
 
-showtext=true
-
 function write_message {
     text="<span font_size=\"medium\">$1</span>"
 	echo -n "$text"
@@ -33,13 +31,7 @@ for entry in "${options[@]}"; do
 done
 
 if [ $# -gt 0 ]; then
-    # If arguments given, use those as the selection
-    selection="${@}"
-else
-    # Otherwise, use the CLI passed choice if given
-    if [ -n "${selectionID+x}" ]; then
-        selection="${messages[$selectionID]}"
-    fi
+	selection="${@}"
 fi
 
 # Don't allow custom entries
@@ -48,7 +40,6 @@ echo -e "\0no-custom\x1ftrue"
 echo -e "\0markup-rows\x1ftrue"
 
 if [ -z "${selection+x}" ]; then
-    # echo -e "\0prompt\x1fPower menu"
     for entry in "${options[@]}"; do
         echo -e "${messages[$entry]}"
     done
