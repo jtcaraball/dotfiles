@@ -1,0 +1,16 @@
+go
+paru
+
+.git
+.local
+.cache
+.mozilla
+.npm
+.cargo
+.rustup
+.docker
+.oh-my-zsh
+
+.node_repl_history
+.wget_hsts
+.zsh_history
