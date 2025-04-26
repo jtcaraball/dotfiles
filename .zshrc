@@ -101,8 +101,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # fzf
-alias fr='cd "$(fd . --base-directory $HOME -td --hidden | fzf)"'
-alias ff='nvim "$(fd . --base-directory $HOME -tf --hidden | fzf)"'
+alias fr='cd $HOME/"$(fd . --base-directory $HOME -td --hidden | fzf)"'
+alias ff='nvim $HOME/"$(fd . --base-directory $HOME -tf --hidden | fzf)"'
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
