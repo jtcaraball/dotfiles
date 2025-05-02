@@ -57,7 +57,7 @@ final_space = true
   alignment = 'right'
 
   [[blocks.segments]]
-    template = '󱦟 {{ .FormattedMs }} '
+    template = '󱦟 {{ .FormattedMs }}'
     foreground = 'p:lavender'
     type = 'executiontime'
     style = 'plain'
