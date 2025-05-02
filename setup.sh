@@ -11,7 +11,7 @@ sudo pacman -Syu
 # - Neovim.
 sudo pacman -S --needed wget stow \
 	xorg i3-wm feh picom polybar rofi maim xdotool xclip dunst libnotify \
-	ttf-ibmplex-mono-nerd epapirus-icon-theme noto-font-emoji \
+	ttf-ibmplex-mono-nerd ttf-iosevka-nerd epapirus-icon-theme noto-font-emoji \
 	pipewire pipewire-jack pipewire-pulse pipewire-audio pipewire-alsa \
 	kitty yazi btop rustup base-devel fzf fd \
 	neovim ripgrep luarocks fd
