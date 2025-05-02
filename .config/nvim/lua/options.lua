@@ -6,6 +6,7 @@ local g = vim.g
 
 -- netrw
 g.netrw_banner = 0
+g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 
 -- disable some default providers
 g.loaded_node_provider = 0
