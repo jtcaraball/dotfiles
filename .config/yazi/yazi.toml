@@ -6,5 +6,5 @@ edit = [
 	{ run = 'nvim "$@"', block = true, for = "unix"},
 ]
 open = [
-	{ run = 'xdg-open "$@"', desc = "Open" },
+	{ run = 'xdg-open "$@"', orphan = true, desc = "Open" },
 ]
