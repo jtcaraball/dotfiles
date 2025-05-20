@@ -110,7 +110,7 @@ vim.diagnostic.config {
 }
 
 -- configure servers
-local servers = { "gopls", "texlab", "pyright", "rust_analyzer", "clangd" }
+local servers = { "gopls", "texlab", "pyright", "rust_analyzer", "clangd", "ts_ls" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup {
