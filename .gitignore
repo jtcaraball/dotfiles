@@ -4,7 +4,8 @@
 .config/systemd
 .config/dconf
 .config/QtProject.conf
-.config/btop/btop.log
+.config/btop
 .config/discord
+.config/libreoffice
 # Wallpaper symlink.
 .config/i3/wallpaper
