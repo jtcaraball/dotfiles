@@ -1,17 +1,13 @@
-local M = {}
-
-M.options = {
+local options = {
 	linters_by_ft = {
 		go = { "golangcilint" },
 		python = { "flake8" },
 	},
 }
 
-M.setup = function (opts)
+local function setup (opts)
 	local lint = require("lint")
-
 	lint.linters_by_ft = opts.linters_by_ft
-
 	vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost" }, {
 		group = vim.api.nvim_create_augroup("lint", { clear = true }),
 		callback = function()
@@ -20,4 +16,9 @@ M.setup = function (opts)
 	})
 end
 
-return M
+return {
+	"mfussenegger/nvim-lint",
+	config = function()
+		return setup(options)
+	end
+}

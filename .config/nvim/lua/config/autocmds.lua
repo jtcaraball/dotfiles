@@ -32,22 +32,6 @@ autocmd({ "UIEnter", "BufReadPost", "BufNewFile" }, {
 	end,
 })
 
--- expandtabs
-autocmd("FileType", {
-	pattern = "python",
-	callback = function()
-		vim.opt_local.expandtab = true
-	end,
-})
-
--- cursor diagnostic
-autocmd("CursorHold", {
-	pattern = "*",
-	callback = function()
-		vim.diagnostic.open_float(nil, {focus=false})
-	end,
-})
-
 -- remove trailing white spaces
 autocmd("BufWritePre", {
 	pattern = { "*" },

@@ -12,6 +12,8 @@ local options = {
 		"c",
 		"go",
 		"comment",
+		"javascript",
+		"typescript",
 	},
 
 	highlight = {
@@ -34,4 +36,12 @@ local options = {
 	}
 }
 
-return options
+return {
+	"nvim-treesitter/nvim-treesitter",
+	event = { "BufReadPost", "BufNewFile" },
+	cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+	build = ":TSUpdate",
+	config = function()
+		require("nvim-treesitter.configs").setup(options)
+	end,
+}
