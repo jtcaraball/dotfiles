@@ -36,4 +36,5 @@ return {
       end
     end)
   end,
+  single_file_support = true,
 }

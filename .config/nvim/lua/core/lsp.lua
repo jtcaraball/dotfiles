@@ -2,35 +2,36 @@ local map = vim.keymap.set
 local autocmd = vim.api.nvim_create_autocmd
 
 vim.lsp.enable({
-    "lua_ls",
+	"lua_ls",
 	"gopls",
 	"clangd",
 	"ts_ls",
 	"vue_ls",
-	"texlab"
+	"texlab",
+	"eslint"
 })
 
 vim.diagnostic.config({
-    virtual_text = false,
-    underline = true,
-    update_in_insert = false,
-    severity_sort = true,
-    float = {
-        border = "rounded",
-        source = true,
-    },
-    signs = {
-        text = {
-            [vim.diagnostic.severity.ERROR] = "󰅚 ",
-            [vim.diagnostic.severity.WARN] = "󰀪 ",
-            [vim.diagnostic.severity.INFO] = "󰋽 ",
-            [vim.diagnostic.severity.HINT] = "󰌶 ",
-        },
-        numhl = {
-            [vim.diagnostic.severity.ERROR] = "ErrorMsg",
-            [vim.diagnostic.severity.WARN] = "WarningMsg",
-        },
-    },
+	virtual_text = false,
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
+	float = {
+		border = "rounded",
+		source = true,
+	},
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = "󰅚 ",
+			[vim.diagnostic.severity.WARN] = "󰀪 ",
+			[vim.diagnostic.severity.INFO] = "󰋽 ",
+			[vim.diagnostic.severity.HINT] = "󰌶 ",
+		},
+		numhl = {
+			[vim.diagnostic.severity.ERROR] = "ErrorMsg",
+			[vim.diagnostic.severity.WARN] = "WarningMsg",
+		},
+	},
 })
 
 -- cursor diagnostic
@@ -38,6 +39,14 @@ autocmd("CursorHold", {
 	pattern = "*",
 	callback = function()
 		vim.diagnostic.open_float(nil, {focus=false})
+	end,
+})
+
+-- set gq as god intended on attach
+autocmd("LspAttach", {
+	callback = function(args)
+		vim.bo[args.buf].formatexpr = nil
+		vim.bo[args.buf].formatprg = nil
 	end,
 })
 
