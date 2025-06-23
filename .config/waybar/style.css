@@ -59,6 +59,7 @@ window#waybar.hidden {
 #memory,
 #wireplumber,
 #clock,
+#cpu,
 #tray {
   border-radius: 4px;
   margin: 6px 3px;
@@ -78,6 +79,11 @@ window#waybar.hidden {
 
 #memory {
   color: @teal;
+  background-color: alpha(@base, 0.8);
+}
+
+#cpu {
+  color: @sky;
   background-color: alpha(@base, 0.8);
 }
 
