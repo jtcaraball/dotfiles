@@ -8,7 +8,8 @@ vim.lsp.enable({
 	"ts_ls",
 	"vue_ls",
 	"texlab",
-	"eslint"
+	"eslint",
+	"pyright"
 })
 
 vim.diagnostic.config({
