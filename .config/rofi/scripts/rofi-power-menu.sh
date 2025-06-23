@@ -10,6 +10,11 @@ texts[restart]="restart"
 texts[poweroff]="power off"
 texts[logout]="logout"
 
+declare -A icons
+icons[restart]="system-reboot"
+icons[poweroff]="system-shut-down"
+icons[logout]="system-log-out"
+
 function write_message {
     text="<span font_size=\"medium\">$1</span>"
 	echo -n "$text"
@@ -41,7 +46,7 @@ echo -e "\0markup-rows\x1ftrue"
 
 if [ -z "${selection+x}" ]; then
     for entry in "${options[@]}"; do
-        echo -e "${messages[$entry]}"
+        echo -e "${messages[$entry]}\0icon\x1f${icons[$entry]}\n"
     done
 else
 	case "$selection" in

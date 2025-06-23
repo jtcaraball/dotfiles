@@ -1,0 +1,19 @@
+/* ROUNDED THEME FOR ROFI */
+/* Author: Newman Sanchez (https://github.com/newmanls) */
+
+* {
+	bg0:    rgba(30, 30, 46, 0.6);
+    bg1:    rgb(30, 30, 46, 0.8);
+    bg2:    #3D3D3D80;
+    bg3:    rgb(180, 190, 254);
+    fg0:    #E6E6E6;
+    fg1:    #FFFFFF;
+    fg2:    #969696;
+    fg3:    rgb(88, 91, 112);
+}
+
+@import "launcher-base.rasi"
+
+element selected {
+    text-color: @bg1;
+}

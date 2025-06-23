@@ -7,29 +7,23 @@ for installing and setting up all packages.
 
 ## System & applications
 
-- Display manager: [xorg](https://wiki.archlinux.org/title/Xorg).
-- Tiling window manager: [i3-wm](https://wiki.archlinux.org/title/I3).
-- Compositor: [picom](https://wiki.archlinux.org/title/Picom).
+- Display manager: [hyprland](https://wiki.archlinux.org/title/Hyprland).
 - Terminal emulator: [kitty](https://wiki.archlinux.org/title/Kitty).
 - Application and utilities launcher: [rofi](https://wiki.archlinux.org/title/Rofi).
 - Notifications: [dunst](https://wiki.archlinux.org/title/Dunst).
-- Status bar: [polybar](https://wiki.archlinux.org/title/Polybar).
+- Status bar: [waybar](https://wiki.archlinux.org/title/Waybar).
 - File manager: [yazi](https://github.com/sxyazi/yazi).
 - Audio recording and playback: [pipewire](https://wiki.archlinux.org/title/PipeWire).
-- Others: [feh](https://wiki.archlinux.org/title/Feh),
-  [fzf](https://wiki.archlinux.org/title/Fzf),
-  [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh),
-  [maim](https://github.com/naelstrof/maim) and
-  [btop](https://github.com/aristocratos/btop).
+- Others: [fzf](https://wiki.archlinux.org/title/Fzf),
+          [oh-my-posh](https://github.com/JanDeDobbeleer/oh-my-posh) and
+          [btop](https://github.com/aristocratos/btop).
 
 ## Neovim
 
 ### Important features
 
-- LSP diagnostics and code completion with
-  [lspconfig](https://github.com/neovim/nvim-lspconfig),
-  [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) and
-  [LuaSnip](https://github.com/L3MON4D3/LuaSnip).
+- Native LSP diagnostics and code completion with
+  [blink.nvim](https://github.com/Saghen/blink.nvim).
 - Linting and code formatting with
   [nvim-lint](https://github.com/mfussenegger/nvim-lint) and
   [conform](https://github.com/stevearc/conform.nvim).
@@ -42,14 +36,14 @@ for installing and setting up all packages.
   [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim).
 - Fast file traversing with [harpoon v2](https://github.com/ThePrimeagen/harpoon/tree/harpoon2).
 - Plugin management with [lazy.nvim](https://github.com/folke/lazy.nvim).
-
-### Not so important features
-
 - Faster code editing with
   [vim-commentary](https://github.com/tpope/vim-commentary),
   [quick-scope](https://github.com/unblevable/quick-scope),
   [nvim-surround](https://github.com/kylechui/nvim-surround) and
   [treesj](https://github.com/Wansmer/treesj).
+
+### Not so important features
+
 - Nice icons with
   [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) (and
   other [Nerd Fonts](https://www.nerdfonts.com/) supported icons).
@@ -65,15 +59,8 @@ for installing and setting up all packages.
   launcher to work you must first set up the necessary permissions, for
   example, with `polkit`.
 
-- You can take screenshots with the `screenshot` command in the rofi
-  launcher.
-
 - Neovim's theme is intended to be used together with the
   [kitty](https://sw.kovidgoyal.net/kitty/) configuration in this repository.
-
-- Wallpaper selection is handled by creating a simlink of the desired image
-  file in the i3 configuration folder using the command `ln -sf /path/to/image
-$HOME/.config/i3/wallpaper`. To see the background change run `i3-msg restart`.
 
 - The mappings were chosen (or left as is) to suit a
   [Ferris Sweep](https://github.com/davidphilipbarr/Sweep) or a [Skeletyl](https://github.com/Bastardkb/Skeletyl) using

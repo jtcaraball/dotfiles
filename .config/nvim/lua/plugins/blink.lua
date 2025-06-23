@@ -25,10 +25,8 @@ return {
 		sources = {
 			default = { 'lsp', 'path', 'snippets', 'buffer' },
 			providers = {
-				lsp = { min_keyword_length = 2, score_offset = 0 },
-				path = { min_keyword_length = 0 },
-				snippets = { min_keyword_length = 2 },
-				buffer = { min_keyword_length = 4, max_items = 5 },
+				lsp = { score_offset = 9001 },
+				snippets = { score_offset = -9001 },
 			}
 		},
 		fuzzy = { implementation = "prefer_rust_with_warning" }
