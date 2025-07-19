@@ -5,6 +5,7 @@ return {
 			go = { "gofumpt" },
 			markdown = { "prettier" },
 			yaml = { "prettier" },
+			vue = { "prettier" },
 		},
 	},
 }

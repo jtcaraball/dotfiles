@@ -1,5 +1,5 @@
 local function get_typescript_server_path(root_dir)
-	local project_roots = vim.fs.find('node_modules', { path = root_dir, upward = false, limit = math.huge })
+	local project_roots = vim.fs.find('node_modules', { path = root_dir, upward = true, limit = math.huge })
 	for _, project_root in ipairs(project_roots) do
 		local typescript_path = project_root .. '/typescript'
 		local stat = vim.loop.fs_stat(typescript_path)
@@ -7,15 +7,15 @@ local function get_typescript_server_path(root_dir)
 			return typescript_path .. '/lib'
 		end
 	end
+	return ''
 end
 
 return {
-	cmd = { 'vue-language-server', '--stdio' },
+	cmd = { 'npm', 'vue-language-server', '--stdio' },
 	filetypes = { 'vue' },
-	-- root_markers = { 'package.json' },
+	root_markers = { 'package.json' },
 	-- https://github.com/vuejs/language-tools/blob/v2/packages/language-server/lib/types.ts
 	init_options = {
-		vue = { hybridMode = false },
 		typescript = {
 			tsdk = ''
 		},

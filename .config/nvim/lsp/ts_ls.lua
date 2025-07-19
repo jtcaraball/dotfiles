@@ -6,9 +6,9 @@ return {
 		hostInfo = 'neovim',
 		plugins = {
 			{
-				name = "@vue/typescript-plugin",
+				name = '@vue/typescript-plugin',
 				location = volar_path,
-				languages = { "vue" },
+				languages = { 'javascript', 'typescript', 'vue' },
 			},
 		},
 	},
@@ -20,6 +20,7 @@ return {
 		'typescript',
 		'typescriptreact',
 		'typescript.tsx',
+		'vue',
 	},
 	root_markers = { 'tsconfig.json', 'jsconfig.json', 'package.json', '.git' },
 	handlers = {

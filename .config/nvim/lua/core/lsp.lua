@@ -5,11 +5,12 @@ vim.lsp.enable({
 	"lua_ls",
 	"gopls",
 	"clangd",
+	"rust_analyzer",
 	"ts_ls",
 	"vue_ls",
 	"texlab",
 	"eslint",
-	"pyright"
+	"pyright",
 })
 
 vim.diagnostic.config({
@@ -40,6 +41,14 @@ autocmd("CursorHold", {
 	pattern = "*",
 	callback = function()
 		vim.diagnostic.open_float(nil, {focus=false})
+	end,
+})
+
+-- close diagnostic on buffer change
+autocmd("BufFilePre", {
+	pattern = "*",
+	callback = function ()
+		vim.diagnostic.reset()
 	end,
 })
 
