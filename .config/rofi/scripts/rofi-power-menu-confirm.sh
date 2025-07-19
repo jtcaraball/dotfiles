@@ -11,7 +11,7 @@ chosen=$(printf "Yes, $*\nCancel" | rofi -dmenu -i -p "Confirm $*:" -theme-str "
 
 handle_cmd () {
 	if [ "$cmd" = "logout" ]; then
-		i3-msg exit
+		hyprctl dispatch exit
 		return
 	fi
 	systemctl $cmd
