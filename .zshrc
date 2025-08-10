@@ -122,6 +122,9 @@ export PATH=$PATH:/usr/local/go/bin
 # go user binaries
 export PATH=$PATH:$HOME/go/bin
 
+# cargo binaries
+export PATH=$PATH:$HOME/.cargo/bin
+
 # Enable docker rootless.
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 
