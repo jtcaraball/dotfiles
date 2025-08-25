@@ -1,6 +1,11 @@
 configuration{
     modes: ["drun", "window", "run", "combi"];
-	combi-modes: ["window", "drun", "power-menu:~/.config/rofi/scripts/rofi-power-menu.sh"];
+	combi-modes: [
+		"window",
+		"drun",
+		"power-menu:~/.config/rofi/scripts/rofi-power-menu.sh",
+		"power-menu:~/.config/rofi/scripts/rofi-screenshot-menu.sh"
+	];
     icon-theme: "Papirus-Dark";
     show-icons: true;
     terminal: "kitty";
