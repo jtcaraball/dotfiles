@@ -11,6 +11,7 @@ vim.lsp.enable({
 	"texlab",
 	"eslint",
 	"pyright",
+	"tinymist",
 })
 
 vim.diagnostic.config({
@@ -20,6 +21,7 @@ vim.diagnostic.config({
 	severity_sort = true,
 	float = {
 		border = "rounded",
+		close_events = { "CursorMoved", "BufHidden", "WinLeave" },
 		source = true,
 	},
 	signs = {
