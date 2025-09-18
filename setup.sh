@@ -10,7 +10,7 @@ sudo pacman -Syu
 # - Terminal.
 # - Neovim.
 sudo pacman -S --needed wget stow rustup \
-	hyprland hyprpaper hypridle wl-clipboard rofi-wayland waybar qt5-wayland qt6-wayland dunst libnotify xdg-desktop-portal-hyprland slurp grim\
+	hyprland hyprpaper hypridle wl-clipboard rofi waybar qt5-wayland qt6-wayland dunst libnotify xdg-desktop-portal-hyprland slurp grim\
 	ttf-ibmplex-mono-nerd ttf-iosevka-nerd papirus-icon-theme noto-fonts-emoji \
 	pipewire pipewire-jack pipewire-pulse pipewire-audio pipewire-alsa \
 	kitty yazi btop base-devel fzf fd \
