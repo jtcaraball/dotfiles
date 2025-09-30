@@ -19,6 +19,7 @@ paste_content() {
 
 # Copy
 CLIPBOARD=$(wl-paste -n)
+sleep 0.5  # Wait for dispatched commands to their thing
 copy_content
 INPUT=$(wl-paste -n)
 
@@ -28,13 +29,14 @@ EXTENSION=$(echo "" | rofi -dmenu -p "Extension" -theme-str "${ROFI_STYLE}")
 TMPFILE="${TMPFILE}.${EXTENSION}"
 
 # Edit
-wl-paste >"$TMPFILE"
-$TERM nvim +startinsert +'autocmd BufWritePost <buffer> quit' "$TMPFILE" || true
+wl-paste --type TEXT >"${TMPFILE}"
+$TERM nvim +startinsert +'autocmd BufWritePost <buffer> quit' "${TMPFILE}" || true
 
 # Paste
-cat "$TMPFILE" | wl-copy -n
+cat "${TMPFILE}" | wl-copy -n
 paste_content
 
 # Restore
-echo "$CLIPBOARD" | wl-copy -n
-rm "$TMPFILE"
+sleep 0.5  # Wait for dispatched commands to their thing
+echo "${CLIPBOARD}" | wl-copy -n
+rm "${TMPFILE}"
