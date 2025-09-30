@@ -6,6 +6,7 @@ return {
 			markdown = { "prettier" },
 			yaml = { "prettier" },
 			vue = { "prettier" },
+			python = { "autopep8" },
 		},
 	},
 }
