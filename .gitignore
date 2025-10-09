@@ -1,11 +1,14 @@
-# Ignore go configs.
-**/go/*
-# Private/unwanted configs.
-.config/systemd
-.config/dconf
-.config/QtProject.conf
-.config/btop
-.config/discord
-.config/libreoffice
-# Wallpaper symlink.
-.config/i3/wallpaper
+# Ignore everything
+.config/*
+# Except the important bits
+!.config/btop/btop.conf
+!.config/btop/themes
+!.config/dunst
+!.config/fd
+!.config/hypr
+!.config/kitty
+!.config/nvim
+!.config/ohmyposh
+!.config/rofi
+!.config/waybar
+!.config/yazi
