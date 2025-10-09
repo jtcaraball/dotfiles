@@ -21,7 +21,7 @@ vim.diagnostic.config({
 	severity_sort = true,
 	float = {
 		border = "rounded",
-		close_events = { "CursorMoved", "BufHidden", "WinLeave" },
+		close_events = { "CursorMoved", "BufHidden", "WinLeave", "InsertEnter" },
 		source = true,
 	},
 	signs = {
@@ -43,14 +43,6 @@ autocmd("CursorHold", {
 	pattern = "*",
 	callback = function()
 		vim.diagnostic.open_float(nil, {focus=false})
-	end,
-})
-
--- close diagnostic on buffer change
-autocmd("BufFilePre", {
-	pattern = "*",
-	callback = function ()
-		vim.diagnostic.reset()
 	end,
 })
 
