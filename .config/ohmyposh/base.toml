@@ -38,7 +38,8 @@ final_space = true
 
     [blocks.segments.properties]
       cache_duration = 'none'
-      style = 'agnoster'
+      style = 'agnoster_short'
+      max_depth = 2
 
   [[blocks.segments]]
     template = '{{ .HEAD }} {{if and (.BranchStatus) (ne .BranchStatus "≡") }}{{ .BranchStatus }} {{ end }}{{if gt .Staging.Modified 0}}+{{ .Staging.Modified}}{{end}}{{.Working.String}}'
