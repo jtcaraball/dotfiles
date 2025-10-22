@@ -1,10 +1,21 @@
 [mgr]
 show_hidden = true
 
-[opener]
-edit = [
-	{ run = 'nvim "$@"', block = true, for = "unix"},
-]
-open = [
-	{ run = 'xdg-open "$@"', orphan = true, desc = "Open" },
-]
+[[opener.edit]]
+run = 'nvim "$@"'
+block = true
+for = "unix"
+
+[[opener.open]]
+run = 'xdg-open "$@"'
+orphan = true
+desc = "Open"
+
+[[opener.set-wallpaper]]
+run = '$HOME/.config/hypr/sethp.sh "$1"'
+for = "linux"
+desc = "Set Wallpaper"
+
+[[open.prepend_rules]]
+name = "*.{jpg,jpeg,png}"
+use  = [ "set-wallpaper", "open" ]
