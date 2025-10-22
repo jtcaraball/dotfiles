@@ -49,9 +49,21 @@ map("n", "<Right>", "<Nop>")
 -- global lsp mappings
 map(
 	"n",
-	"<leader>ds",
-	vim.diagnostic.setloclist,
+	"<leader>dl",
+	function()
+		vim.diagnostic.setloclist()
+		vim.cmd("lopen")
+	end,
 	{ desc = "lsp diagnostic loclist" }
+)
+map(
+	"n",
+	"<leader>df",
+	function()
+		vim.diagnostic.setqflist()
+		vim.cmd("copen")
+	end,
+	{ desc = "lsp diagnostic quick fix list" }
 )
 
 -- miscellaneous
