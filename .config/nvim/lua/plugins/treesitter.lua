@@ -1,7 +1,3 @@
-local ignore_array = {
-	"latex"
-}
-
 local options = {
 	ensure_installed = {
 		"lua",
@@ -11,37 +7,33 @@ local options = {
 		"vimdoc",
 		"c",
 		"go",
+		"gitcommit",
 		"comment",
 		"javascript",
 		"typescript",
-	},
-
-	highlight = {
-		enable = true,
-		disable = ignore_array,
-		use_languagetree = true,
-	},
-
-	auto_install = true,
-
-	ignore_install = ignore_array,
-
-	indent = {
-		enable = true,
-		disable = ignore_array,
-	},
-
-	incremental_selection = {
-		disable = ignore_array,
+		"make",
+		"python",
+		"rust",
 	}
 }
 
+local function config (opts)
+	local ts = require("nvim-treesitter")
+	if opts.ensure_installed ~= nil then
+		ts.install(opts.ensure_installed)
+	end
+	vim.api.nvim_create_autocmd('FileType', {
+	  pattern = ts.get_installed(),
+	  callback = function() vim.treesitter.start() end,
+	})
+end
+
 return {
 	"nvim-treesitter/nvim-treesitter",
-	event = { "BufReadPost", "BufNewFile" },
-	cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
 	build = ":TSUpdate",
-	config = function()
-		require("nvim-treesitter.configs").setup(options)
-	end,
+	branch = "main",
+	lazy = false,
+	config = function ()
+		return config(options)
+	end
 }
