@@ -17,10 +17,11 @@ g.loaded_ruby_provider = 0
 ---------------------------- options -------------------------------
 
 -- general
-vim.o.wrap = false
-vim.o.scrolloff = 8
-vim.o.swapfile = false
-vim.opt.colorcolumn = '80'
+o.wrap = false
+o.scrolloff = 8
+o.swapfile = false
+o.textwidth = 99
+opt.colorcolumn = '100'
 
 -- cursor
 o.cursorline = true
