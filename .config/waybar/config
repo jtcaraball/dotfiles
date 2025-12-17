@@ -3,9 +3,9 @@
     "position": "top",
     "spacing": 0,
     "height": 34,
-	"margin-left": 18,
-	"margin-right": 18,
-	"margin-top": 5,
+	"margin-left": 0,
+	"margin-right": 0,
+	"margin-top": 0,
 	"margin-bot": 0,
     "modules-left": [
         "custom/logo",
