@@ -11,7 +11,7 @@ return {
 			flavour = 'mocha',
 			transparent_background = true,
 			custom_highlights = {
-				ColorColumn = { bg = colors.surface1 },
+				ColorColumn = { bg = colors.surface3 },
 				NormalFloat = { bg = colors.none },
 				FloatTitle = { bg = colors.none },
 				FloatBorder = { fg = border_color, bg = colors.none },
@@ -33,10 +33,8 @@ return {
 			},
 			integrations = {
 				aerial = true,
-				alpha = true,
 				blink_cmp = true,
 				cmp = true,
-				dashboard = true,
 				flash = true,
 				grug_far = true,
 				gitsigns = true,

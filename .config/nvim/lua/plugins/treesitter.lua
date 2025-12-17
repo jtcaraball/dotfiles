@@ -10,10 +10,12 @@ local options = {
 		"gitcommit",
 		"comment",
 		"javascript",
-		"typescript",
+		"tsx",
+		"vue",
 		"make",
 		"python",
 		"rust",
+		"latex",
 	}
 }
 

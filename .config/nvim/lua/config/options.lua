@@ -21,6 +21,7 @@ o.wrap = false
 o.scrolloff = 8
 o.swapfile = false
 o.textwidth = 99
+opt.formatoptions:remove('t')
 opt.colorcolumn = '100'
 
 -- cursor
