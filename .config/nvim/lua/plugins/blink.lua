@@ -19,6 +19,13 @@ return {
 				auto_show = true,
 				window = { border = "rounded" },
 			},
+			accept = {
+				auto_brackets = {
+					enable = false,
+					kind_resolution = { enabled = false },
+					semantic_token_resolution = { enabled = false },
+				},
+			},
 		},
 		-- Default list of enabled providers defined so that you can extend it
 		-- elsewhere in your config, without redefining it, due to `opts_extend`
