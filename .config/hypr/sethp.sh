@@ -4,7 +4,6 @@ WPPATH=$1
 CONF=$HOME/.config/hypr/hyprpaper.conf
 
 # Current session changes
-hyprctl hyprpaper preload "$WPPATH"
 hyprctl hyprpaper wallpaper ",$WPPATH"
 
 # Change config
