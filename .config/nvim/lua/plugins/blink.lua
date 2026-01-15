@@ -21,7 +21,7 @@ return {
 			},
 			accept = {
 				auto_brackets = {
-					enable = false,
+					enabled = false,
 					kind_resolution = { enabled = false },
 					semantic_token_resolution = { enabled = false },
 				},
