@@ -17,5 +17,5 @@ for = "linux"
 desc = "Set Wallpaper"
 
 [[open.prepend_rules]]
-name = "*.{jpg,jpeg,png}"
+url = "*.{jpg,jpeg,png}"
 use  = [ "set-wallpaper", "open" ]
