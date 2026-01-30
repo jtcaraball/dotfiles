@@ -110,9 +110,7 @@ export FZF_DEFAULT_OPTS=" \
 --color=selected-bg:#45475a \
 --color=border:#313244,label:#cdd6f4"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source /usr/share/nvm/init-nvm.sh
 
 # Add my bin
 PATH+=":$HOME/.local/bin"
