@@ -10,6 +10,7 @@ paru
 .rustup
 .docker
 .oh-my-zsh
+.nvm
 
 .node_repl_history
 .wget_hsts
