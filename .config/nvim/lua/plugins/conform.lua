@@ -9,7 +9,8 @@ return {
 			typescript = { "prettier" },
 			typescriptreact = { "prettier" },
 			python = { "autopep8" },
-			sql = { "pg_format" }
+			sql = { "pg_format" },
+			typst = { "typstyle" }
 		},
 	},
 }
