@@ -1,6 +1,7 @@
 return {
 	'saghen/blink.cmp',
 	dependencies = { 'rafamadriz/friendly-snippets' },
+	version = '1.*',
 	build = 'cargo build --release',
 	opts = {
 		-- See :h blink-cmp-config-keymap for defining your own keymap
