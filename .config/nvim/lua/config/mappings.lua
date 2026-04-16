@@ -54,8 +54,8 @@ map(
 
 -- miscellaneous
 map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'general clear highlights' })
-map({ 'n', 'v' }, '<leader>y', [['+y]], { desc = 'yank to system\'s clipboard' })
-map({ 'n' }, '<leader>Y', [['+Y]], { desc = 'YANK to system\'s clipboard' })
+map({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'yank to system\'s clipboard' })
+map({ 'n' }, '<leader>Y', [["+Y]], { desc = 'YANK to system\'s clipboard' })
 
 -- conform
 map('n', '<leader>fm', function()
