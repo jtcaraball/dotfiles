@@ -30,6 +30,12 @@ return {
 	-- No need to lazy-load with lazy.nvim.
 	-- This plugin initializes itself lazily.
 	lazy = false,
+	opts = {
+		layout = {
+			height = 0.92,
+			width = 1,
+		},
+	},
 	keys = {
 		{
 			"<leader>ff", -- try it if you didn't it is a banger keybinding for a picker
