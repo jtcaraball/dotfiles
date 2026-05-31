@@ -25,11 +25,20 @@ opt.formatoptions:remove('t')
 opt.colorcolumn = '100'
 
 -- find
-opt.path:append '**'
+opt.path:append('**')
+opt.wildignore:append({
+	'*/node_modules/*',
+	'*/.git/*',
+	'*/build/*',
+	'*/dist/*',
+	'*/target/*',
+	'*/.next/*',
+})
+opt.shortmess:append('S')
 
 -- cursor
 o.cursorline = true
-o.cursorlineopt = "number"
+o.cursorlineopt = 'number'
 
 -- indenting
 o.tabstop = 4
@@ -46,12 +55,12 @@ opt.fillchars = { eob = " " }
 o.smartcase = true
 
 -- numbers
-o.signcolumn = "yes"
+o.signcolumn = 'yes'
 o.number = true
 o.relativenumber = true
 
 -- no nvim intro
-opt.shortmess:append "sI"
+opt.shortmess:append 'sI'
 
 -- splits
 o.splitbelow = true
@@ -61,7 +70,7 @@ o.splitright = true
 o.updatetime = 250
 
 -- spelling
-o.spellsuggest = "best, 9"
+o.spellsuggest = 'best, 9'
 
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.fn.has "win32" ~= 0

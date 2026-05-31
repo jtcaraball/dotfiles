@@ -4,6 +4,9 @@ return {
 	version = '1.*',
 	build = 'cargo build --release',
 	opts = {
+		cmdline = {
+			enabled = false,
+		},
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
 			preset = 'default',

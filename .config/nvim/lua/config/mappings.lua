@@ -26,6 +26,21 @@ map(
 	{ desc = 'open netrw', silent = true }
 )
 
+-- find files
+map(
+	'n',
+	'<leader>ff',
+	':find ',
+	{ desc = 'start finding' }
+)
+
+map(
+	'n',
+	'<leader>fz',
+	':vim //g **/*<C-b><Right><Right><Right><Right><Right>',
+	{ desc = 'we got grep at home' }
+)
+
 -- for old times sake
 map('n', '<Up>', '<Nop>')
 map('n', '<Down>', '<Nop>')
