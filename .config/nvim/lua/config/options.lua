@@ -24,6 +24,9 @@ o.textwidth = 99
 opt.formatoptions:remove('t')
 opt.colorcolumn = '100'
 
+-- find
+opt.path:append '**'
+
 -- cursor
 o.cursorline = true
 o.cursorlineopt = "number"
