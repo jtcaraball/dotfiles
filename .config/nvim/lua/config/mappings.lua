@@ -37,7 +37,7 @@ map(
 map(
 	'n',
 	'<leader>fz',
-	':vim //g **/*<C-b><Right><Right><Right><Right><Right>',
+	':vim //g **/* | :copen<C-b><Right><Right><Right><Right><Right>',
 	{ desc = 'we got grep at home' }
 )
 
