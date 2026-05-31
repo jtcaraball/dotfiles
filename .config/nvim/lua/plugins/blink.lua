@@ -5,7 +5,12 @@ return {
 	build = 'cargo build --release',
 	opts = {
 		cmdline = {
-			enabled = false,
+			keymap = {
+				preset = 'inherit',
+				['<Tab>'] = { 'show' },
+				['<CR>'] = { 'accept_and_enter', 'fallback' },
+			},
+			completion = { menu = { auto_show = false } },
 		},
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {
