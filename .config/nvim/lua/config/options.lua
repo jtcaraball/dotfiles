@@ -36,6 +36,11 @@ opt.wildignore:append({
 })
 opt.shortmess:append('S')
 
+if vim.fn.executable('rg') == 1 then
+	vim.opt.grepprg = 'rg --vimgrep --smart-case'
+	vim.opt.grepformat = '%f:%l:%c:%m'
+end
+
 -- cursor
 o.cursorline = true
 o.cursorlineopt = 'number'
