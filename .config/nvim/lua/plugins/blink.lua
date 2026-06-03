@@ -10,7 +10,14 @@ return {
 				['<Tab>'] = { 'show' },
 				['<CR>'] = { 'accept_and_enter', 'fallback' },
 			},
-			completion = { menu = { auto_show = false } },
+			completion = {
+				menu = {
+					auto_show = function ()
+						local cmd = vim.fn.getcmdline()
+						return vim.startswith(cmd, 'find')
+					end,
+				},
+			},
 		},
 		-- See :h blink-cmp-config-keymap for defining your own keymap
 		keymap = {

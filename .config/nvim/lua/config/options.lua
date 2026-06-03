@@ -25,21 +25,35 @@ opt.formatoptions:remove('t')
 opt.colorcolumn = '100'
 
 -- find
-opt.path:append('**')
-opt.wildignore:append({
-	'*/node_modules/*',
-	'*/.git/*',
-	'*/build/*',
-	'*/dist/*',
-	'*/target/*',
-	'*/.next/*',
-})
-opt.shortmess:append('S')
-
 if vim.fn.executable('rg') == 1 then
-	vim.opt.grepprg = 'rg --vimgrep --smart-case'
-	vim.opt.grepformat = '%f:%l:%c:%m'
+	opt.grepprg = 'rg --vimgrep --smart-case'
+	opt.grepformat = '%f:%l:%c:%m'
 end
+
+function UseFD(cmdarg, _)
+	if vim.fn.executable('fd') == 0 then
+		vim.notify("fd is not installed", vim.log.levels.ERROR)
+		return {}
+	end
+	local cmd = {
+		'fd',
+		'--type', 'f',
+		'--hidden',
+		'--exclude', '.git',
+		'--exclude', 'node_modules',
+		'--full-path'
+	}
+	if cmdarg and cmdarg ~= "" then
+		table.insert(cmd, cmdarg)
+	end
+	local fdout = vim.system(cmd, { text = true }):wait()
+	if fdout.code > 1 or fdout.stdout == "" then
+		return {}
+	end
+	return vim.split(fdout.stdout, "\n", { trimempty = true })
+end
+
+o.findfunc = 'v:lua.UseFD'
 
 -- cursor
 o.cursorline = true
