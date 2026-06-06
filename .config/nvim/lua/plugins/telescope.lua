@@ -56,10 +56,27 @@ return {
 		defaults = {
 			prompt_prefix = ' 🔭 ',
 			selection_caret = ' ',
+			layout_config = {
+				height = { padding = 0 },
+				width = { padding = 0 },
+			}
 		},
 		pickers = {
 			find_files = {
 				find_command = find_command,
+				-- We have Ivy theme at home.
+				previewer = false,
+				results_title = "",
+				sorting_strategy = "ascending",
+				layout_strategy = "bottom_pane",
+				layout_config = {
+					height = 15,
+				},
+				border = true,
+				borderchars = {
+					prompt = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+					results = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
+				},
 			},
 		}
 	}
