@@ -26,21 +26,6 @@ map(
 	{ desc = 'open netrw', silent = true }
 )
 
--- find files
-map(
-	'n',
-	'<leader>ff',
-	':find ',
-	{ desc = 'start finding' }
-)
-
-map(
-	'n',
-	'<leader>fz',
-	':silent :grep  | :copen<Left><Left><Left><Left><Left><Left><Left><Left><Left>',
-	{ desc = 'we got grep at home' }
-)
-
 -- for old times sake
 map('n', '<Up>', '<Nop>')
 map('n', '<Down>', '<Nop>')
