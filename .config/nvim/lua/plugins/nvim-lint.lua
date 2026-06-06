@@ -40,6 +40,7 @@ end
 
 return {
 	'mfussenegger/nvim-lint',
+	commit = 'eab58b4',
 	config = function()
 		return setup(options)
 	end

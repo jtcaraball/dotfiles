@@ -44,6 +44,7 @@ end
 
 return {
 	'nvim-lualine/lualine.nvim',
+	commit = '47f91c4',
 	dependencies = {
 		'nvim-tree/nvim-web-devicons',
 	},

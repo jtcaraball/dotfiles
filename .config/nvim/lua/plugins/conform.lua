@@ -1,5 +1,6 @@
 return {
 	'stevearc/conform.nvim',
+	commit = '8314f4c',
 	opts = {
 		formatters_by_ft = {
 			go = { 'gofumpt' },

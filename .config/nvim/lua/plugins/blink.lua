@@ -1,5 +1,6 @@
 return {
 	'saghen/blink.cmp',
+	commit = '78336bc',
 	dependencies = { 'rafamadriz/friendly-snippets' },
 	version = '1.*',
 	build = 'cargo build --release',

@@ -1,5 +1,6 @@
 return {
 	'Wansmer/treesj',
+	commit = '186084d',
 	dependencies = { 'nvim-treesitter/nvim-treesitter' },
 	keys = {
 		{

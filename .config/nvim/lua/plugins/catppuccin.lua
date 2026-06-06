@@ -1,10 +1,11 @@
 return {
-	"catppuccin/nvim",
-	name = "catppuccin",
+	'catppuccin/nvim',
+	commit = 'ce8d176',
+	name = 'catppuccin',
 	priority = 1000,
 	config = function()
-		local colors = require("catppuccin.palettes").get_palette()
-		colors.none = "NONE"
+		local colors = require('catppuccin.palettes').get_palette()
+		colors.none = 'NONE'
 		local border_color = colors.lavender
 		local options = {
 			term_colors = true,
@@ -49,13 +50,13 @@ return {
 				native_lsp = {
 					enabled = true,
 					underlines = {
-						errors = { "undercurl" },
-						hints = { "undercurl" },
-						warnings = { "undercurl" },
-						information = { "undercurl" },
+						errors = { 'undercurl' },
+						hints = { 'undercurl' },
+						warnings = { 'undercurl' },
+						information = { 'undercurl' },
 					},
 				},
-				navic = { enabled = true, custom_bg = "lualine" },
+				navic = { enabled = true, custom_bg = 'lualine' },
 				neotest = true,
 				neotree = true,
 				noice = true,
@@ -67,7 +68,7 @@ return {
 				which_key = true,
 			},
 		}
-		require("catppuccin").setup(options)
-		vim.cmd.colorscheme "catppuccin"
+		require('catppuccin').setup(options)
+		vim.cmd.colorscheme 'catppuccin'
 	end
 }
