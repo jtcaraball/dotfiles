@@ -80,6 +80,21 @@ local function explore_find_files()
 	})
 end
 
+local function find_all()
+	local builtin = require('telescope.builtin')
+	builtin.find_files({
+		find_command = {
+			-- Command.
+			'fd', '--type', 'f', '--color', 'never',
+			-- Hidden.
+			'-u',
+			-- Ignores.
+			'-E', '.git', '-E', 'node_modules', '-E', 'target',
+		},
+		prompt_title = 'Explore'
+	})
+end
+
 return {
 	'nvim-telescope/telescope.nvim',
 	commit = '7d32479',
@@ -96,16 +111,16 @@ return {
 			desc = 'Find files',
 		},
 		{
-			'<leader>fa',
-			'<cmd>Telescope find_files hidden=true<CR>',
-			mode = 'n',
-			desc = 'Find all files',
-		},
-		{
 			'<leader>fz',
 			'<cmd>Telescope live_grep<CR>',
 			mode = 'n',
 			desc = 'Fuzzy over files',
+		},
+		{
+			'<leader>fa',
+			find_all,
+			mode = 'n',
+			desc = 'Find all files',
 		},
 		{
 			'<leader>fe',
