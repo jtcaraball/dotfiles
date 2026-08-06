@@ -71,12 +71,12 @@ local function explore_find_files()
 		find_command = {
 			-- Command.
 			'fd', '--type', 'f', '--color', 'never',
-			-- Set home.
-			'--base-directory', vim.fn.expand('~'),
+			-- Set explore juce.
+			'--base-directory', vim.fn.expand('~'), '-a',
 			-- Ignores.
 			'-E', '.git', '-E', 'node_modules', '-E', 'target',
 		},
-		prompt_title = 'Explore'
+		prompt_title = 'Explore',
 	})
 end
 
