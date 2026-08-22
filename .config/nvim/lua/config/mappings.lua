@@ -1,85 +1,63 @@
 local map = vim.keymap.set
 
--- tpop is always first
-map(
-	"n",
-	"<leader>Gs",
-	"<cmd>G<CR><C-w>k<cmd>q<CR>",
-	{ desc = "full git status" }
-)
-map(
-	"n",
-	"<leader>Gd",
-	"<cmd>Gvdiffsplit<CR>",
-	{ desc = "full git status" }
-)
-
 -- navigation
-map("n", "<leader>h", "<C-w>h", { desc = "switch window left" })
-map("n", "<leader>l", "<C-w>l", { desc = "switch window right" })
-map("n", "<leader>j", "<C-w>j", { desc = "switch window down" })
-map("n", "<leader>k", "<C-w>k", { desc = "switch window up" })
+map('n', '<leader>h', '<C-w>h', { desc = 'switch window left' })
+map('n', '<leader>l', '<C-w>l', { desc = 'switch window right' })
+map('n', '<leader>j', '<C-w>j', { desc = 'switch window down' })
+map('n', '<leader>k', '<C-w>k', { desc = 'switch window up' })
 map(
-	"n",
-	"<leader>vs",
-	":vsplit<CR>",
-	{ desc = "switch window up", silent = true }
+	'n',
+	'<leader>vs',
+	':vsplit<CR>',
+	{ desc = 'switch window up', silent = true }
 )
 map(
-	"n",
-	"<leader>hs",
-	":split<CR>",
-	{ desc = "switch window up", silent = true }
+	'n',
+	'<leader>hs',
+	':split<CR>',
+	{ desc = 'switch window up', silent = true }
 )
 
 -- netrw
 map(
-	"n",
-	"<leader>nt",
-	":Ex<CR>",
-	{ desc = "open netrw", silent = true }
+	'n',
+	'<leader>nt',
+	':Ex<CR>',
+	{ desc = 'open netrw', silent = true }
 )
 
 -- for old times sake
-map("n", "<Up>", "<Nop>")
-map("n", "<Down>", "<Nop>")
-map("n", "<Left>", "<Nop>")
-map("n", "<Right>", "<Nop>")
+map('n', '<Up>', '<Nop>')
+map('n', '<Down>', '<Nop>')
+map('n', '<Left>', '<Nop>')
+map('n', '<Right>', '<Nop>')
 
 -- global lsp mappings
 map(
-	"n",
-	"<leader>dl",
+	'n',
+	'<leader>dl',
 	function()
 		vim.diagnostic.setloclist()
-		vim.cmd("lopen")
+		vim.cmd('lopen')
 	end,
-	{ desc = "lsp diagnostic loclist" }
+	{ desc = 'lsp diagnostic loclist' }
 )
 map(
-	"n",
-	"<leader>df",
+	'n',
+	'<leader>df',
 	function()
 		vim.diagnostic.setqflist()
-		vim.cmd("copen")
+		vim.cmd('copen')
 	end,
-	{ desc = "lsp diagnostic quick fix list" }
+	{ desc = 'lsp diagnostic quick fix list' }
 )
 
 -- miscellaneous
-map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
-map({ "n", "v" }, "<leader>y", [["+y]], { desc = "yank to system's clipboard" })
-map({ "n" }, "<leader>Y", [["+Y]], { desc = "YANK to system's clipboard" })
-
--- TSJToggle
-map(
-	"n",
-	"<leader>ss",
-	require("treesj").toggle,
-	{ desc = "split function", silent = true }
-)
+map('n', '<Esc>', '<cmd>noh<CR>', { desc = 'general clear highlights' })
+map({ 'n', 'v' }, '<leader>y', [["+y]], { desc = 'yank to system\'s clipboard' })
+map({ 'n' }, '<leader>Y', [["+Y]], { desc = 'YANK to system\'s clipboard' })
 
 -- conform
-map("n", "<leader>fm", function()
-	require("conform").format { lsp_fallback = true }
-end, { desc = "format file" })
+map('n', '<leader>fm', function()
+	require('conform').format { lsp_fallback = true }
+end, { desc = 'format file' })

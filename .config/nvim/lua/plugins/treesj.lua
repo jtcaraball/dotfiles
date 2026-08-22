@@ -1,6 +1,18 @@
 return {
 	'Wansmer/treesj',
+	commit = '186084d',
 	dependencies = { 'nvim-treesitter/nvim-treesitter' },
+	keys = {
+		{
+			'<leader>ss',
+			function()
+				require('treesj').toggle()
+			end,
+			mode = 'n',
+			desc = 'split function',
+			silent = true,
+		}
+	},
 	config = function()
 		require('treesj').setup({
 			use_default_keymaps = false,

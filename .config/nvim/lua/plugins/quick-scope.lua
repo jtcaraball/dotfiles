@@ -1,1 +1,4 @@
-return { "unblevable/quick-scope" }
+return {
+	'unblevable/quick-scope',
+	commit = '6cee1d9',
+}

@@ -24,9 +24,40 @@ o.textwidth = 99
 opt.formatoptions:remove('t')
 opt.colorcolumn = '100'
 
+-- find
+if vim.fn.executable('rg') == 1 then
+	opt.grepprg = 'rg --vimgrep --smart-case'
+	opt.grepformat = '%f:%l:%c:%m'
+end
+
+function UseFD(cmdarg, _)
+	if vim.fn.executable('fd') == 0 then
+		vim.notify("fd is not installed", vim.log.levels.ERROR)
+		return {}
+	end
+	local cmd = {
+		'fd',
+		'--type', 'f',
+		'--hidden',
+		'--exclude', '.git',
+		'--exclude', 'node_modules',
+		'--full-path'
+	}
+	if cmdarg and cmdarg ~= "" then
+		table.insert(cmd, cmdarg)
+	end
+	local fdout = vim.system(cmd, { text = true }):wait()
+	if fdout.code > 1 or fdout.stdout == "" then
+		return {}
+	end
+	return vim.split(fdout.stdout, "\n", { trimempty = true })
+end
+
+o.findfunc = 'v:lua.UseFD'
+
 -- cursor
 o.cursorline = true
-o.cursorlineopt = "number"
+o.cursorlineopt = 'number'
 
 -- indenting
 o.tabstop = 4
@@ -43,12 +74,12 @@ opt.fillchars = { eob = " " }
 o.smartcase = true
 
 -- numbers
-o.signcolumn = "yes"
+o.signcolumn = 'yes'
 o.number = true
 o.relativenumber = true
 
 -- no nvim intro
-opt.shortmess:append "sI"
+opt.shortmess:append 'sI'
 
 -- splits
 o.splitbelow = true
@@ -58,7 +89,7 @@ o.splitright = true
 o.updatetime = 250
 
 -- spelling
-o.spellsuggest = "best, 9"
+o.spellsuggest = 'best, 9'
 
 -- add binaries installed by mason.nvim to path
 local is_windows = vim.fn.has "win32" ~= 0
