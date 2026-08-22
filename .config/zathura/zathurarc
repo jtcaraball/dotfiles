@@ -1,0 +1,4 @@
+set font "monospace normal 24"
+set show-recent 1
+set n-completion-items 6
+set statusbar-home-tilde true
