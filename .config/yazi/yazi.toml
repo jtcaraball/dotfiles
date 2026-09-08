@@ -2,17 +2,17 @@
 show_hidden = true
 
 [[opener.edit]]
-run = 'nvim "$@"'
+run = 'nvim %s'
 block = true
 for = "unix"
 
 [[opener.open]]
-run = 'xdg-open "$@"'
+run = 'xdg-open %s'
 orphan = true
 desc = "Open"
 
 [[opener.set-wallpaper]]
-run = '$HOME/.config/hypr/sethp.sh "$1"'
+run = '$HOME/.config/hypr/sethp.sh %s1'
 for = "linux"
 desc = "Set Wallpaper"
 
