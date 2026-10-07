@@ -80,6 +80,12 @@ autocmd("LspAttach", {
 		)
 		map(
 			"n",
+			"gc",
+			vim.lsp.buf.incoming_calls,
+			opts(args.buf, "Go to calls")
+		)
+		map(
+			"n",
 			"<leader>sh",
 			vim.lsp.buf.signature_help,
 			opts(args.buf, "Show signature help")
